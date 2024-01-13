@@ -1,5 +1,7 @@
-const { Clutter, St } = imports.gi;
-const Main = imports.ui.main;
+import St from 'gi://St';
+import Clutter from 'gi://Clutter';
+import * as Main from 'resource:///org/gnome/shell/ui/main.js';
+    // new import syntax
 
 function getSwatchTime() {
     const date = new Date();
@@ -15,7 +17,7 @@ function getSwatchTime() {
     return `@${swatchTime.toFixed(2)}`;
 }
 
-class Extension {
+export default class Beattime extends Extension {
     constructor() {
         this._label = null;
         this._updateInterval = null;
@@ -40,6 +42,6 @@ class Extension {
     }
 }
 
-function init() {
+/* function init() {
     return new Extension();
-}
+} */
